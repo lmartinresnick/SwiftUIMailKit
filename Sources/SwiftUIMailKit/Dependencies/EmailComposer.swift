@@ -14,6 +14,8 @@ public final class EmailComposer {
     public var defaultToSystem = true
     public var recipient: String?
 
+    private init() {}
+
     public static var canSendMail: Bool {
         MFMailComposeViewController.canSendMail()
     }
@@ -26,7 +28,7 @@ public final class EmailComposer {
             if let emailUrl = createEmailUrl(details: details) {
                 return .thirdPartyUrl(url: emailUrl)
             }
-            
+
         } else {
             if let emailUrl = createEmailUrl(details: details) {
                 return .thirdPartyUrl(url: emailUrl)
