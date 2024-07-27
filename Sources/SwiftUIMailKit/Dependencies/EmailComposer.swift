@@ -11,6 +11,7 @@ import SwiftUI
 public final class EmailComposer {
     public static let shared = EmailComposer()
 
+    public var defaultToSystem = true
     public var recipient: String?
 
     public static var canSendMail: Bool {
@@ -18,12 +19,22 @@ public final class EmailComposer {
     }
 
     public func handleEmailRequest(details: MailDetails) -> EmailType {
-        if Self.canSendMail {
-            return .mfmail
-        }
+        if defaultToSystem {
+            if Self.canSendMail {
+                return .mfmail
+            }
+            if let emailUrl = createEmailUrl(details: details) {
+                return .thirdPartyUrl(url: emailUrl)
+            }
+            
+        } else {
+            if let emailUrl = createEmailUrl(details: details) {
+                return .thirdPartyUrl(url: emailUrl)
+            }
 
-        if let emailUrl = createEmailUrl(details: details) {
-            return .thirdPartyUrl(url: emailUrl)
+            if Self.canSendMail {
+                return .mfmail
+            }
         }
 
         return .error(message: "Unable to process request. No email provider found on device.")
