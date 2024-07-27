@@ -17,11 +17,11 @@ SwiftUIMail is a lightweight library to easily draft emails within your SwiftUI 
 
 The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler.
 
-Once you have your Swift package set up, adding KeyboardBeGone as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift` or the Package list in Xcode.
+Once you have your Swift package set up, adding SwiftUIMailKit as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift` or the Package list in Xcode.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/lmartinresnick/SwiftUIMail", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/lmartinresnick/SwiftUIMailKit", .upToNextMajor(from: "1.0.0"))
 ]
 ```
 
