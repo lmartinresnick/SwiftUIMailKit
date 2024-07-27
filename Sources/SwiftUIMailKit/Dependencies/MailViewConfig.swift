@@ -8,14 +8,14 @@
 import SwiftUI
 
 public struct MailDetails {
-    var recipient: String? // setting this will override singleton recipient variable in EmailComposer
-    var subject: String
-    var body: String?
+    public var recipient: String? // setting this will override singleton recipient variable in EmailComposer
+    public var subject: String
+    public var body: String?
 }
 
 public struct MailViewConfig {
-    var details: MailDetails = MailDetails(subject: "")
-    var open: Bool = false
+    public var details: MailDetails = MailDetails(subject: "")
+    public var open: Bool = false
 
     private let composer = EmailComposer()
 
