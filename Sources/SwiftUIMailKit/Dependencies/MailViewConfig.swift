@@ -22,7 +22,7 @@ public struct MailDetails {
 public struct MailViewConfig {
     public var details: MailDetails
     public var open: Bool
-    private let composer = EmailComposer()
+    private let composer = EmailComposer.shared
 
     public init(
         details: MailDetails = MailDetails(subject: ""),
