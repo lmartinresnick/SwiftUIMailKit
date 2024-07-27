@@ -19,7 +19,7 @@ public struct MailViewConfig {
 
     private let composer = EmailComposer()
 
-    func handleRequest() -> EmailType {
+    public func handleRequest() -> EmailType {
         composer.handleEmailRequest(details: details)
     }
 }
